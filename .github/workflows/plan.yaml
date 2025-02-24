@@ -26,7 +26,7 @@ jobs:
           if [[ "$BRANCH_NAME" == "main" ]]; then
             echo "ENV=prd" >> $GITHUB_ENV
           else
-            echo "ENV=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+            echo "ENV=${github.head_ref}" >> $GITHUB_ENV
           fi
 
       - name: configure aws credentials

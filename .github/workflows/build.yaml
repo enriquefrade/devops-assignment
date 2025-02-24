@@ -22,7 +22,7 @@ jobs:
           if [[ "$BRANCH_NAME" == "main" ]]; then
             echo "DOCKER_TAG=latest" >> $GITHUB_ENV
           else
-            echo "DOCKER_TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+            echo "DOCKER_TAG=${github.head_ref}" >> $GITHUB_ENV
           fi
 
       - name: Log in to Docker Hub
