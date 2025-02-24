@@ -38,3 +38,8 @@ variable "app_version" {
   description = "App version"
   type        = string
 }
+
+variable "tag" {
+  description = "Docker Tag"
+  type        = string
+}

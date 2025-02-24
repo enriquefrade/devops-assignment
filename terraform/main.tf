@@ -75,6 +75,16 @@ resource "helm_release" "mt_app" {
   version   = var.app_version
 
   set {
+    name  = "image.tag"
+    value = var.tag
+  }
+
+  set {
+    name  = "image.repository "
+    value = var.environment
+  }
+
+  set {
     name  = "secrets.apiBaseUrl"
     value = "api-${random_string.API_BASE_URL.result}.mt-challenge.com"
   }
