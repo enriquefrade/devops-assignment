@@ -11,7 +11,7 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     env:
-     DOCKER_IMAGE: "enriquefrade/mt-app:"
+     DOCKER_IMAGE: "enriquefrade/mt-app"
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
@@ -35,4 +35,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ env.DOCKER_IMAGE}} ${{ env.DOCKER_TAG }}
+          tags: ${{ env.DOCKER_IMAGE}}:${{ env.DOCKER_TAG }}
